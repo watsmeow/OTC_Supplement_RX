@@ -22,7 +22,7 @@ const GeneralRecs = () => {
 
     const getGeneral = async () => {
 
-        const check = localStorage.getItem('suppOfTheDay');
+        const check = sessionStorage.getItem('suppOfTheDay');
 
         if (check) {
             setSuppOfTheDay(JSON.parse(check));
@@ -34,7 +34,7 @@ const GeneralRecs = () => {
             });
             const data = await api.json();
 
-            localStorage.setItem('suppOfTheDay', JSON.stringify(data));
+            sessionStorage.setItem('suppOfTheDay', JSON.stringify(data));
             setSuppOfTheDay(data)
             console.log(data)
         }
@@ -43,16 +43,21 @@ const GeneralRecs = () => {
     return ( 
         <div>
         <Wrapper>
-            <h2>{suppOfTheDay.id}</h2>
+            <h2>Learn more about {suppOfTheDay.id}</h2>
             <h3>Effects with a high level of supporting evidence:</h3>
             <Splide options={{
                 perPage: 3,
+                breakpoints: {
+                    900: {
+                        perPage: 1,
+                    },
+                },
                 pagination: false,
                 drag: "free",
                 gap: "2rem",
             }}>
                 {suppOfTheDay.effects?.map((effect) => {
-                    if (effect.levelOfEvidence === "High" || effect.levelOfEvidence === "Medium") 
+                    if (effect.levelOfEvidence === "High" || effect.levelOfEvidence === "Medium" || effect.levelOfEvidence === "Highest") 
                         return (
                             <SplideSlide>
                                 <Card key={effect.outcome.id}>
@@ -82,22 +87,25 @@ const Button = styled.div`
     align-items: center;
     div {
         border: none;
-        background: lightgray;
+        background: #091903;
         font-size: 1rem;
         padding: 1rem;
         border-radius: 1rem;
         outline: none;
-        width: 30%;
+        min-width: fit-content;
         text-align: center;
         margin-top: 2rem;
+        box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+        -webkit-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+        -moz-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
     }
     a {
         text-decoration: none;
-        color: black;
         margin-bottom: 0;
     }
     h5 {
         text-transform: uppercase;
+        color: #fafaf8;
     }
 `
 
@@ -108,17 +116,18 @@ const Wrapper = styled.div`
 const Card = styled.div`
     width: 23rem;
     min-height: 27rem;
-    border: solid black 2px;
+    border: solid #091903 2px;
     background: #fafaf8;
     border-radius: 2rem;
     padding: 2rem 1.5rem;
     margin: 2rem 0;
     overflow: hidden;
-    box-shadow: 10px -1px 17px 1px rgba(74,74,74,0.99);
-    -webkit-box-shadow: 10px -1px 17px 1px rgba(74,74,74,0.99);
-    -moz-box-shadow: 10px -1px 17px 1px rgba(74,74,74,0.99);
+    box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+    -webkit-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+    -moz-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
     p{
         margin-bottom: .5rem;
+        color: #2B3F2B;
     }
 `;
 

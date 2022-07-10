@@ -1,4 +1,21 @@
 export const supplementList = [
-    "ashwagandha",
-    "yohimbine"
-  ];
+  "magnesium",
+  "curcumin",
+  "calcium",
+  "zinc",
+  "ashwagandha",
+  "arginine",
+  "berberine",
+  "biotin",
+  "echinacea",
+  "fenugreek",
+  "glutathione",
+  "glutamine",
+  "quercetin",
+  "resveratrol",
+  "saffron",
+  "selenium",
+  "spirulina",
+  "theanine",
+  "yohimbine"
+];

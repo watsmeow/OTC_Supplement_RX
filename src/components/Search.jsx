@@ -32,16 +32,16 @@ const FormStyle = styled.form`
     width: 75%;
     
     input{
-        border: solid black 2px;
+        border: solid #001A00 2px;
         background: #FDFDFD;
         font-size: 1.5rem;
         padding: 1rem 4rem;
         border-radius: 1rem;
         outline: none;
         width: 100%;
-        box-shadow: 3px -1px 17px 1px rgba(74,74,74,0.99);
--webkit-box-shadow: 3px -1px 17px 1px rgba(74,74,74,0.99);
--moz-box-shadow: 3px -1px 17px 1px rgba(74,74,74,0.99);
+        box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+        -webkit-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+        -moz-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
     }
     svg{
         position: absolute;

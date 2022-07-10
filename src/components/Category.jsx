@@ -40,29 +40,32 @@ const SLink = styled(NavLink)`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: whitesmoke;
+    color: #fafaf8;
     text-align: center;
     text-decoration: none;
-    background: #0F210E;
+    background: #788378;
     cursor: pointer;
     padding: .5rem;
-    min-width: 100px;
-    height: 100px;
+    min-width: 90px;
+    height: 90px;
     border-radius: 50%;
     margin: 0 .75rem;
+    border: 1px solid #001A00;
+    box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+    -webkit-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+    -moz-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
     p{
         margin-top: .25rem;
+        text-transform: uppercase;
+        font-size: 12px;
     }
     svg{
         color: whitesmoke;
         font-size: 1.5rem;
     }
     &.active{
-        background: #788378;
+        background: #001A00;
         svg{
-            color: white;
-        }
-        p{
             color: white;
         }
     }

@@ -19,11 +19,7 @@ function Searched() {
 
     const getSupplement = async (searchedSupp) => {
 
-        const check = sessionStorage.getItem('searchedSupplement');
 
-        if (check) {
-            setSearchedSupplement(JSON.parse(check));
-        } else {
             const data = await fetch(`https://supplements.p.rapidapi.com/SupplementDetails/?supplementID=${searchedSupp}`, {
                 headers: new Headers({
                         'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
@@ -31,10 +27,10 @@ function Searched() {
             });
             const supps = await data.json();
     
-            sessionStorage.setItem('searchedSupplement', JSON.stringify(supps))
+
             setSearchedSupplement(supps)
-            console.log(supps)
-        }
+
+        
     };
 
     useEffect(() => {
@@ -54,12 +50,16 @@ function Searched() {
             onChange={(e) => {console.log(e); setInput(e.target.value.toLowerCase())}} 
             type="text"  />
         </FormStyle>
-        <h4>There is a high level of supporting evidence that {searchedSupplement.id} has the following effects:</h4>
         <Splide options={{
             perPage: 3,
+            breakpoints: {
+                900: {
+                    perPage: 1,
+                },
+            },
             pagination: false,
             drag: "free",
-            gap: "3rem",
+            gap: "2rem",
         }}>
             {searchedSupplement.effects?.filter((effect) => {
                 return effect.outcome.id.toLowerCase().includes(input)
@@ -79,7 +79,7 @@ function Searched() {
             </Splide>
             <Button>
                 <div>
-                    <a href={amazonSearchLink}>Purchase {searchedSupplement.id}</a>
+                    <a href={amazonSearchLink}><h5>Purchase {searchedSupplement.id}</h5></a>
                 </div>
             </Button>
         </Wrapper>
@@ -87,26 +87,7 @@ function Searched() {
   );
 }
 
-const Button = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    div {
-        border: none;
-        background: lightgray;
-        font-size: 1rem;
-        padding: 1rem 1rem;
-        border-radius: 1rem;
-        outline: none;
-        width: 30%;
-        text-align: center;
-        margin-top: 2rem;
-    }
-    a {
-        text-decoration: none;
-        color: black;
-    }
-`
+
 
 const Wrapper = styled.div`
     margin: 4rem 0rem;
@@ -117,44 +98,76 @@ const Wrapper = styled.div`
 const FormStyle = styled.form`
     margin: 0rem auto;
     position: relative;
-    width: 50%;
+    width: 75%;
+    
     input{
-        border: none;
-        background: lightgray;
+        border: solid #001A00 2px;
+        background: #FDFDFD;
         font-size: 1.5rem;
         padding: 1rem 4rem;
         border-radius: 1rem;
         outline: none;
-        width: 100%;
-        margin-bottom: 2rem;
+        width: 50%;
+        margin-bottom: 1rem;
+        box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+        -webkit-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+        -moz-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
     }
     svg{
         position: absolute;
-        top: 50%;
-        left: 2%;
+        top: 55%;
+        left: 27%;
         transform: translate(100%, -%50);
         color: black;
         font-size: 1.5rem;
     }
 `
-const Grid = styled.div`
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-gap: 3rem;
-`
-const Card = styled.div`
-    width: 24rem;
-    min-height: 27rem;
-    border-radius: 2rem;
-    background: yellow;
-    padding: 2rem;
-    overflow: hidden;
-
-    p{
-        margin-bottom: .5rem
+const Button = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    div {
+        border: none;
+        background: #091903;
+        font-size: 1rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        outline: none;
+        min-width: fit-content;
+        text-align: center;
+        margin-top: 2rem;
+        box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+        -webkit-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+        -moz-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+    }
+    a {
+        text-decoration: none;
+        margin-bottom: 0;
+        color: #fafaf8;
+    }
+    h5 {
+        text-transform: uppercase;
+        color: #fafaf8;
     }
 `
-
+const Card = styled.div`
+    width: 22rem;
+    min-height: 25rem;
+    border: solid #091903 2px;
+    background: #fafaf8;
+    border-radius: 2rem;
+    padding: 2rem 1.25rem;
+    margin: 1.5rem 0;
+    overflow: hidden;
+    box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+    -webkit-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+    -moz-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+    p{
+        margin-bottom: .5rem;
+        color: #2B3F2B;
+    }
+`;
 
 
 

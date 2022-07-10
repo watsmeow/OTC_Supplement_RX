@@ -9,6 +9,15 @@ import '@splidejs/react-splide/css';
 function CategorySupps() {
 
   const [category, setCategory] = useState([]);
+  const suppName = () => {
+    console.log(category)
+    if (category[0].name == 'Vitamin') {
+      return 'Vitamin Therapy'
+    } else {
+      return category[0].name
+    }
+  }
+
   let params = useParams();
 
   const getCategorySupps = async (category) => {
@@ -28,22 +37,29 @@ useEffect(() => {
 
   return (
     <Wrapper>
-    <h2>Supplements commonly used in</h2>
+    <h2>Supplements commonly used in </h2>
 
     <Splide options={{
                 perPage: 4,
+                breakpoints: {
+                  900: {
+                      perPage: 1,
+                    },
+                },
                 pagination: false,
                 drag: "free",
-                gap: "3rem",
+                gap: "1.75rem",
             }}>
       {category.map((supp, index) => {
-        if (index != 0)
+        if (index !== 0)
         return(
           <SplideSlide>
+            <Linky to={`/searched/${supp.name}`}>
             <Card key={supp.id}>
               <h5>{supp.name}</h5>
               <p>{supp.quickSummary}</p>
             </Card>
+            </Linky>
           </SplideSlide>
         )
       })}
@@ -56,23 +72,33 @@ const Wrapper = styled.div`
     margin: 4rem 0rem;
 `;
 
-const Grid = styled.div`
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-gap: 3rem;
-`;
 const Card = styled.div`
+    margin: 1rem 0;
     width: 17rem;
     min-height: 22rem;
+    max-height: 22rem;
     border-radius: 2rem;
-    border: solid black 2px;
+    background: #fafaf8;
+    border: solid #091903 2px;
     padding: 2rem;
-    overflow: hidden;
-
+    overflow: auto;
+    box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+    -webkit-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+    -moz-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+    -webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
     p{
         margin-bottom: .5rem;
+        color: #2B3F2B;
     }
 `;
+
+const Linky = styled(Link)`
+    text-decoration: none;
+`
 
 
 export default CategorySupps
