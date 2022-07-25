@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { supplementList } from '../data';
+import { supplementList, magnesium } from '../data';
 import styled from 'styled-components';
 import { Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
@@ -32,7 +32,9 @@ const GeneralRecs = () => {
                         'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
                 }),
             });
-            const data = await api.json();
+            //API IS NO LONGER AVAILABLE, SETTING A STATIC RESPONSE FOR DEMO PURPOSES
+            // const data = await api.json();
+            const data = magnesium
 
             sessionStorage.setItem('suppOfTheDay', JSON.stringify(data));
             setSuppOfTheDay(data)
@@ -87,7 +89,7 @@ const Button = styled.div`
     align-items: center;
     div {
         border: none;
-        background: #091903;
+        background: #FF6C37;
         font-size: 1rem;
         padding: 1rem;
         border-radius: 1rem;
@@ -95,9 +97,9 @@ const Button = styled.div`
         min-width: fit-content;
         text-align: center;
         margin-top: 2rem;
-        box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
-        -webkit-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
-        -moz-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+        box-shadow: 1px -1px 10px 2px rgba(252,173,35,0.75);
+        -webkit-box-shadow: 1px -1px 10px 2px rgba(252,173,35,0.75);
+        -moz-box-shadow: 1px -1px 10px 2px rgba(252,173,35,0.75);
     }
     a {
         text-decoration: none;

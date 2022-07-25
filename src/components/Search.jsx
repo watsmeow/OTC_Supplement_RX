@@ -32,23 +32,24 @@ const FormStyle = styled.form`
     width: 75%;
     
     input{
-        border: solid #001A00 2px;
+        border: none;
+        color: #FF6C37;
         background: #FDFDFD;
         font-size: 1.5rem;
         padding: 1rem 4rem;
         border-radius: 1rem;
         outline: none;
         width: 100%;
-        box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
-        -webkit-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
-        -moz-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+        box-shadow: 1px -1px 10px 2px rgba(252,173,35,0.75);
+        -webkit-box-shadow: 1px -1px 10px 2px rgba(252,173,35,0.75);
+        -moz-box-shadow: 1px -1px 10px 2px rgba(252,173,35,0.75);
     }
     svg{
         position: absolute;
         top: 35%;
         left: 2%;
         transform: translate(100%, -%50);
-        color: black;
+        color: #FF6C37;
         font-size: 1.5rem;
     }
 `

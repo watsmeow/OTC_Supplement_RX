@@ -2,12 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+
 }
 
 html { 
   text-align: center;
-  background: url(./assets/imageedit_1_6103839137.png) no-repeat center center fixed; 
+  background: url(./assets/vitaminC.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -15,29 +16,29 @@ html {
 }
 
 p {
-  font-family: 'Lato', sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto Mono', monospace;
+
+  font-weight: 400;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto Mono', monospace;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0% 7%;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Roboto Mono', monospace;
+
 }
 
 h1, h2, h3, h4 {
   margin-bottom: 1rem;
   text-transform: uppercase;
-  color: #001A00;
+  color: #FDFDFD;
 }
 
 h1, h2 {
@@ -62,5 +63,5 @@ h4 {
 h5 {
   font-size: 1rem;
   margin-bottom: .25rem;
-  color: #001A00;
+  color: #FDFDFD;
 }

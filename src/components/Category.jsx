@@ -40,33 +40,33 @@ const SLink = styled(NavLink)`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #fafaf8;
+    color: #FF6C37;
     text-align: center;
     text-decoration: none;
-    background: #788378;
+    background: rgba(247, 249, 252);
     cursor: pointer;
     padding: .5rem;
     min-width: 90px;
     height: 90px;
     border-radius: 50%;
     margin: 0 .75rem;
-    border: 1px solid #001A00;
-    box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
-    -webkit-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
-    -moz-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+    box-shadow: 1px -1px 10px 2px rgba(252,173,35,0.75);
+    -webkit-box-shadow: 1px -1px 10px 2px rgba(252,173,35,0.75);
+    -moz-box-shadow: 1px -1px 10px 2px rgba(252,173,35,0.75);
     p{
         margin-top: .25rem;
         text-transform: uppercase;
         font-size: 12px;
     }
     svg{
-        color: whitesmoke;
+        color: #FF6C37;
         font-size: 1.5rem;
     }
     &.active{
-        background: #001A00;
+        background: #FF6C37;
+        color: rgba(247, 249, 252);
         svg{
-            color: white;
+            color: rgba(247, 249, 252);
         }
     }
 `
