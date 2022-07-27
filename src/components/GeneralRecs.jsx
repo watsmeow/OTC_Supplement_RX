@@ -116,20 +116,25 @@ const Wrapper = styled.div`
 `;
 
 const Card = styled.div`
-    width: 23rem;
-    min-height: 27rem;
-    border: solid #091903 2px;
+    width: 24rem;
+    min-height: 28rem;
     background: #fafaf8;
     border-radius: 2rem;
     padding: 2rem 1.5rem;
     margin: 2rem 0;
     overflow: hidden;
-    box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
-    -webkit-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
-    -moz-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+    box-shadow: 1px -1px 10px 2px rgba(252,173,35,0.75);
+    -webkit-box-shadow: 1px -1px 10px 2px rgba(252,173,35,0.75);
+    -moz-box-shadow: 1px -1px 10px 2px rgba(252,173,35,0.75);
     p{
-        margin-bottom: .5rem;
+        margin-bottom: .25rem;
         color: #2B3F2B;
+    }
+    h4 {
+        color: #E27547;
+    }
+    h5 {
+        color: #E27547;
     }
 `;
 

@@ -79,12 +79,11 @@ const Card = styled.div`
     max-height: 22rem;
     border-radius: 2rem;
     background: #fafaf8;
-    border: solid #091903 2px;
     padding: 2rem;
     overflow: auto;
-    box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
-    -webkit-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
-    -moz-box-shadow: 1px -1px 10px 2px rgba(74,74,74,0.54);
+    box-shadow: 1px -1px 10px 2px rgba(252,173,35,0.75);
+    -webkit-box-shadow: 1px -1px 10px 2px rgba(252,173,35,0.75);
+    -moz-box-shadow: 1px -1px 10px 2px rgba(252,173,35,0.75);
     -webkit-scrollbar {
       display: none;
     }
