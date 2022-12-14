@@ -1,5 +1,5 @@
 # OTC Supplement RX
-***PLEASE NOTE, THE API THAT THIS APP UTILIZES HAS BEEN DECOMMISSIONED. THE MAIN PAGE DISPLAYS THE SUPPLEMENT MAGNESIUM FOR DEMO PURPOSES, BUT UNFORTUNATELY THE SEARCH FUNCTIONS DO NOT WORK DUE TO THE LACK OF FUNCTIONAL API***
+***NOTE: THE API THAT THIS APP UTILIZES HAS BEEN DECOMMISSIONED. THE MAIN PAGE DISPLAYS THE SUPPLEMENT MAGNESIUM FOR DEMO PURPOSES, BUT UNFORTUNATELY THE SEARCH FUNCTIONS DO NOT WORK DUE TO THE LACK OF FUNCTIONAL API***
 Do you ever hear about an over the counter supplement and wonder if it could be helpful for you and your specific symptoms? Then this app is for you. OTC Supplement RX allows you to search for supplements and learn about their effects, and whether the symptoms that they may be efficacious in treating include your particular issues. You can also search by category of medical traditions for supplements commonly used within that practice. 
 
 **Link to project:** https://62e19ce24f8bec27c9787c59--otcsupplementrx.netlify.app/
